@@ -46,7 +46,7 @@ Vagrant.configure("2") do |config|
       subconfig.vm.network "private_network", ip: "192.168.10.10#{i}"
       subconfig.vm.network "forwarded_port", guest: 22, host: "5001#{i}", auto_correct: true, id: "ssh"
       subconfig.vm.provision "shell", path: "https://github.com/dbdmfdms11/kube/blob/main/init_cfg.sh", args: [ N, k8s_V ]
-      subconfig.vm.provision "shell", path: "https://github.com/dbdmfdms11/main/blob/main/worker.sh"
+      subconfig.vm.provision "shell", path: "https://github.com/dbdmfdms11/kube/blob/main/worker.sh"
     end
   end
 
